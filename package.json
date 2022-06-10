@@ -1,0 +1,23 @@
+{
+  "name": "reload-nginx.conf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liwenkang/reload-nginx.conf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liwenkang/reload-nginx.conf/issues"
+  },
+  "homepage": "https://github.com/liwenkang/reload-nginx.conf#readme",
+  "dependencies": {
+    "shelljs": "^0.8.5"
+  }
+}
