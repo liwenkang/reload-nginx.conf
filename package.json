@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/liwenkang/reload-nginx.conf#readme",
   "dependencies": {
+    "open": "^8.4.0",
     "shelljs": "^0.8.5"
   }
 }

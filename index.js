@@ -1,6 +1,7 @@
-var shell = require("shelljs");
-
+const shell = require("shelljs");
 const fs = require("fs");
+const open = require("open");
+
 const proxyFilePath =
   "/Users/liwenkang/Desktop/program/waiqin365-appsvr/public/setupProxy.config.json";
 const nginxFilePath = "/usr/local/etc/nginx/nginx.conf";
@@ -28,12 +29,16 @@ fs.watch(proxyFilePath, (event, filename) => {
       const result = nginxTextArray.join("\n");
       fs.writeFile(nginxFilePath, result, "utf8", async (err) => {
         if (err) {
-          console.log("重启 nginx 失败", err);
+          console.error("重启 nginx 失败", err);
           return;
         } else {
           console.log("重启 nginx 成功", target);
           // 3. 重启 nginx
           shell.exec("nginx -s reload");
+          await open("http://localhost:3002/auto/login");
+          setTimeout(async () => {
+            await open("http://localhost:9091/portal/main.action");
+          }, 1000);
         }
       });
     } catch (e) {
