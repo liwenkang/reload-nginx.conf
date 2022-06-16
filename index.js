@@ -20,8 +20,8 @@ fs.watch(proxyFilePath, (event, filename) => {
       const nginxTextArray = nginxText.split("\n");
       const newProxyText = `            proxy_pass ${target};`;
 
-      if (newProxyText !== nginxTextArray[6]) {
-        nginxTextArray[6] = `            proxy_pass ${target};`;
+      if (newProxyText !== nginxTextArray[7]) {
+        nginxTextArray[7] = `            proxy_pass ${target};`;
       } else {
         console.log("未修改 nginx 地址");
         return;
